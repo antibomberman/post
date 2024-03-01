@@ -1,0 +1,16 @@
+version: '3'
+dotenv: ['./config/local.yaml']
+
+tasks:
+  migration:up:
+    cmds:
+      - goose -dir migrations postgres "$DATABASE_URL" up
+    silent: true
+  migration:reset:
+    cmds:
+      - goose -dir migrations postgres "$DATABASE_URL" reset
+    silent: true
+  migration:create:
+    cmds:
+      - goose create "$NAME" sql
+    silent: true

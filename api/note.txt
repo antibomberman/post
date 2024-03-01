@@ -1,0 +1,13 @@
+register
+login
+logout
+
+posts list
+post get by id with comments
+create post
+update post
+delete post
+my posts
+
+create comment
+delete comment
