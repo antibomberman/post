@@ -47,6 +47,11 @@ func (r *commentRepository) GetByPostId(postId string) ([]models.Comment, error)
 	if err != nil {
 		return nil, err
 	}
+
+	if len(comments) == 0 {
+		return []models.Comment{}, nil
+	}
+
 	return comments, nil
 }
 func (r *commentRepository) GetById(id string) (models.Comment, error) {

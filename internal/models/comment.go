@@ -1,11 +1,11 @@
 package models
 
 type Comment struct {
-	ID        int
-	Content   string
-	UserID    int
-	PostID    int
-	CreatedAt string
+	ID        int    `db:"id" json:"id"`
+	Content   string `db:"content" json:"content"`
+	UserID    int    `db:"user_id" json:"userID"`
+	PostID    int    `db:"post_id" json:"postID"`
+	CreatedAt string `db:"created_at" json:"createdAt"`
 }
 type CommentCreate struct {
 	Content string `json:"content" db:"content" `

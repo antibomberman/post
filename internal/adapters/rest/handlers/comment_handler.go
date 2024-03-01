@@ -30,7 +30,11 @@ func CommentRouter(di *di.DI) chi.Router {
 
 }
 func (d commentDi) all(w http.ResponseWriter, r *http.Request) {
-	postId := chi.URLParam(r, "post_id")
+	postId := r.URL.Query().Get("post_id")
+	if postId == "" {
+		response.Error(w, "post_id is required", http.StatusBadRequest, nil)
+		return
+	}
 	comments, err := d.CommentService.GetByPostId(postId)
 	if err != nil {
 		response.Error(w, err.Error(), http.StatusBadRequest, nil)

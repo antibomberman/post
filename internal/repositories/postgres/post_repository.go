@@ -29,6 +29,9 @@ func (r *postRepository) All() ([]models.Post, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(posts) == 0 {
+		return []models.Post{}, nil
+	}
 
 	return posts, nil
 }

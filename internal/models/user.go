@@ -1,11 +1,11 @@
 package models
 
 type User struct {
-	ID        int
-	Name      string
-	Email     string
-	Password  string
-	CreatedAt string
+	ID        int    `db:"id"`
+	Name      string `db:"name"`
+	Email     string `db:"email"`
+	Password  string `db:"password"`
+	CreatedAt string `db:"created_at"`
 }
 
 type UserCreate struct {

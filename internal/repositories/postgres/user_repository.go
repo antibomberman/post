@@ -41,6 +41,7 @@ func (u *userRepository) ExistsUserByEmail(email string) (bool, error) {
 
 	return count > 0, nil
 }
+
 func (u *userRepository) GetUserByEmail(email string) (models.User, error) {
 
 	var user models.User
