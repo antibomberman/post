@@ -1,9 +1,8 @@
 register
 login
-logout
 
 posts list
-post get by id with comments
+post detail
 create post
 update post
 delete post
